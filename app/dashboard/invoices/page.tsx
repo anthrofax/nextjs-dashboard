@@ -7,6 +7,12 @@ import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Invoices',
+};
+
 export default async function Page({
   searchParams,
 }: {
@@ -15,7 +21,7 @@ export default async function Page({
     page?: string;
   };
 }) {
-  console.log(searchParams)
+  console.log(searchParams);
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;
 
